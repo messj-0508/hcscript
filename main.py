@@ -1,5 +1,6 @@
 # coding: utf-8
 
+import os
 from core.daily_activity import *
 
 def daily_case():
@@ -37,6 +38,7 @@ def main():
         IS_OTHER = input("执行何种活动:\n 1.喵酱大扫荡 \n 2.二次驻守\n 3.羁绊大抽奖\n 4.小二，给我来许多建经验房\n 5.积分赛一轮\n ")
         if int(IS_OTHER) == 3:
             Lotto_Time = input("请输入抽奖次数：")
+    IS_SHUTDOWN = input("任务执行完毕是否关机（1/0）")
     if int(IS_ENTER) == 1:
         tab_alt()
     else:
@@ -48,7 +50,7 @@ def main():
         mid_case()
     elif int(IS_DAILY) == 3:
         if int(IS_OTHER) == 1:
-            quick_shop(True, 0)
+            quick_shop(False, 5)
         elif int(IS_OTHER) == 2:
             defend_area(False)
         elif int(IS_OTHER) == 3:
@@ -63,6 +65,9 @@ def main():
         test()
     else:
         print("暂无此功能！")
+    if int(IS_SHUTDOWN) == 1:
+        os.system("shutdown -s -t 0")
+
 
 def test():
     #quick_shop(True, 0)
