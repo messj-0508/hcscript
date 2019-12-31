@@ -86,3 +86,19 @@ def ten_lotto(time = 10):
 def execute_train():
     mousemove_click(790, 230, 2)
     get_exp()
+
+# 日常功能：收取完成日常活动的奖励
+def gain_reward():
+    mousemove_click(1180, 50, 2)
+    mousemove_click(685, 515, 2)
+    for i in range(16):
+        mousemove_click(1120, 170, 1.5)
+    leave_room()
+
+# 日常功能：收取完成驻守活动的回报
+def gain_allowance(time = 7):
+    mousemove_click(655, 360, 2)
+    for i in range(time):
+        mousemove_click(1040, 380, 2)
+        any_press()
+    any_press()

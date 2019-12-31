@@ -14,8 +14,10 @@ def daily_case():
     enter_room()
     main_switch()
     base_other.swap_away()
+    base_other.gain_allowance()
     defend_area()
     enter_challenge()
+    base_other.gain_reward()
 
     print("ending......")
 
@@ -25,20 +27,24 @@ def mid_case():
 
     base_other.sign_on()
     quick_shop(True, 0)
+    base_other.ten_lotto(15)
     enter_room(False)
     main_switch()
+    base_other.gain_allowance()
     defend_area(False)
 
     print("ending......")
 
 def main():
+    IS_SHUTDOWN = 0
     IS_ENTER = input("是否进入游戏（1/0）")
     IS_DAILY = input("执行何种操作:\n 1.日常活动 \n 2.补充活动\n 3.其他活动\n 4.进行测试\n")
     if int(IS_DAILY) == 3:
         IS_OTHER = input("执行何种活动:\n 1.喵酱大扫荡 \n 2.二次驻守\n 3.羁绊大抽奖\n 4.小二，给我来许多建经验房\n 5.积分赛一轮\n ")
         if int(IS_OTHER) == 3:
             Lotto_Time = input("请输入抽奖次数：")
-    IS_SHUTDOWN = input("任务执行完毕是否关机（1/0）")
+    if int(IS_DAILY) == 1 or int(IS_DAILY) == 2:
+        IS_SHUTDOWN = input("任务执行完毕是否关机（1/0）")
     if int(IS_ENTER) == 1:
         tab_alt()
     else:
@@ -73,7 +79,7 @@ def test():
     #quick_shop(True, 0)
     #base_other.ten_lotto(22)
     #base_other.swap_away()
-    enter_campus()
+    base_other.gain_allowance(1)
 
 
 if __name__ == '__main__':

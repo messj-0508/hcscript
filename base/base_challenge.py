@@ -15,7 +15,7 @@ def one_fight(t = 100):
 def one_fight_II():
     mousemove_click(930, 800, 1.25)
     mousemove_click(930, 900, 1.25)
-    time.sleep(40)
+    time.sleep(60)
     any_press()
 
 # 挑战事件3-1：物资筹备
