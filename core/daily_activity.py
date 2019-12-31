@@ -16,7 +16,7 @@ def quick_shop(NO_REFRESH_SHOP = True, REFRESH_NUM = 5):
 def enter_room(IS_GIFT = True):
     mousemove_click(820, 1000, 4)
     mousemove_click(950, 150, 2)
-    rmb_times = 24
+    rmb_times = 28
     while(rmb_times):
         base_other.get_rmb()
         rmb_times -= 1
